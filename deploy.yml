@@ -1,16 +1,18 @@
 ---
-- hosts: localhost
+- name: Deploy Prescripto Application
+  hosts: localhost
   connection: local
   gather_facts: no
 
   tasks:
+
     - name: Stop Existing Containers
-      command: docker compose down
+      shell: docker compose down
       args:
         chdir: /mnt/c/ProgramData/Jenkins/.jenkins/workspace/prescripto-project
       ignore_errors: yes
 
     - name: Build and Start Containers
-      command: docker compose up --build -d
+      shell: docker compose up --build -d
       args:
         chdir: /mnt/c/ProgramData/Jenkins/.jenkins/workspace/prescripto-project
