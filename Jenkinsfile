@@ -16,7 +16,7 @@ stages {
 
     stage('Deploy Application') {
         steps {
-            bat 'wsl ansible-playbook /home/devops/ansible-pull-demo/deploy.yml'
+            bat 'docker compose up -d'
         }
     }
 }
