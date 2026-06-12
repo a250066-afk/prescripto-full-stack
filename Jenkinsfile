@@ -16,14 +16,22 @@ stages {
 
     stage('Deploy Application') {
         steps {
-            bat 'wsl ansible-playbook /home/soham/ansible-project/deploy.yml'
+            bat 'wsl ansible-playbook /home/devops/ansible-pull-demo/deploy.yml'
         }
     }
 }
 
 post {
     always {
-        echo 'Pipeline Finished Successfully'
+        echo 'Pipeline Finished'
+    }
+
+    success {
+        echo 'Application Deployed Successfully'
+    }
+
+    failure {
+        echo 'Deployment Failed'
     }
 }
 }
