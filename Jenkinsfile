@@ -8,7 +8,7 @@ pipeline {
 
             steps {
 
-                git 'YOUR_GITHUB_REPO_URL'
+                git https://github.com/a250066-afk/prescripto-full-stack.git
             }
         }
 
