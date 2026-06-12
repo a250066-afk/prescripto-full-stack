@@ -16,6 +16,7 @@ stages {
 
     stage('Deploy Application') {
         steps {
+            bat 'docker compose down'
             bat 'docker compose up -d'
         }
     }
